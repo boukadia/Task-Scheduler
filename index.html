@@ -7,16 +7,12 @@
     <title>Document</title>
   </head>
   <body>
-    <nav>
-      <div>
-        <img src="" alt="" />
-      </div>
-      <div>
+    <header>
+      <h1>list to do</h1>
+      <!-- <a href="">Acceuil</a>
         <a href="">Acceuil</a>
-        <a href="">Acceuil</a>
-        <a href="">Acceuil</a>
-      </div>
-    </nav>
+        <a href="">Acceuil</a> -->
+    </header>
     <section>
       <form id="inpt">
         <div>
@@ -43,7 +39,7 @@
         </div>
         <div>
           <select name="etat" id="etat">
-            <option value="start" selected>start</option>
+            <option value="static" selected>static</option>
             <option value="encour" id="encour">encour</option>
             <option value="fini" id="fini">fini</option>
           </select>
@@ -53,14 +49,13 @@
     </section>
     <section>
       <div class="tbl">
-        <table id="table">
+        <table id="table" border="3">
           <tr>
             <th>Tache</th>
             <th>Description</th>
             <th>Date</th>
             <th>Etat</th>
           </tr>
-
           <tbody id="tBody"></tbody>
         </table>
       </div>

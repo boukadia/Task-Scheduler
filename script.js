@@ -1,14 +1,16 @@
 let tache=document.getElementById('tache');
 let description=document.getElementById('description');
 let date=document.getElementById('date');
-
+let tBody=document.getElementById('tBody');
 let etat=document.getElementById('etat');
 let ajouter=document.getElementById('ajouter'); 
 let i;
-let temp;
-let mood = 'ajouter'
+let j;
+let update = 0;
 
 //creer fonction d'ajouter les row dans le tableau
+
+
 let tasks=[];
 ajouter.onclick = function(){
     let newTask={
@@ -18,14 +20,14 @@ ajouter.onclick = function(){
         etat:etat.value,
 
     }
-    if (mood === 'ajouter'){
+    if (update === 0){
         tasks.push(newTask);
-        
+
         
     }
     else{
-        tasks[temp]=newTask;
-        mood='ajouter';
+        tasks[j]=newTask;
+        update=0;
         ajouter.innerHTML='ajouter';
     }
     showTasks();  
@@ -37,8 +39,19 @@ ajouter.onclick = function(){
 
 function showTasks(){
     let table='';
+    let type= '';
     for(i=0;i<tasks.length;i++){
+        type = "";
+        if (tasks[i].etat === "fini" ) {
+            type = "rgba(94, 224, 47)";
+        }else if(tasks[i].etat === "encour"){
+            type = "rgba(227, 214, 32)";
+        }else{
+            type = "rgba(168, 50, 50)";
+        }
+
         table+=`
+        <tr style="background-color: ${type}">
         <td>${tasks[i].tache}</td> 
     <td>${tasks[i].description}</td>
      <td>${tasks[i].date}</td>
@@ -50,11 +63,11 @@ function showTasks(){
     document.getElementById('tBody').innerHTML = table;
     console.log(showTasks)
 
+    // tasks[i].etat = '';
 }
 
-//<td>${i}</td>
-//<td>${etat[i].options[etat.selectedIndex].text}</td> 
-// supprimer task
+
+
 function supprimeTask(i){
     // console.log(i)
     tasks.splice(i,1);
@@ -71,8 +84,8 @@ function modifierTask(i){
     date.value=tasks[i].date;
     etat.value=tasks[i].etat;
     ajouter.innerHTML='modifier';
-    mood = 'modifier';
-    temp=i;
+    update = 1;
+    j=i;
 
 }
 
