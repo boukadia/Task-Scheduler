@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <nav>
+      <div>
+        <img src="" alt="" />
+      </div>
+      <div>
+        <a href="">Acceuil</a>
+        <a href="">Acceuil</a>
+        <a href="">Acceuil</a>
+      </div>
+    </nav>
+    <section>
+      <form id="inpt">
+        <div>
+          <input
+            type="text"
+            required
+            name=""
+            id="tache"
+            placeholder="set your tache"
+          />
+        </div>
+
+        <div>
+          <input
+            type="text"
+            name=""
+            required
+            id="description"
+            placeholder="set your description"
+          />
+        </div>
+        <div>
+          <input type="date" required name="" id="date" />
+        </div>
+        <div>
+          <select name="etat" id="etat">
+            <option value="start" selected>start</option>
+            <option value="encour" id="encour">encour</option>
+            <option value="fini" id="fini">fini</option>
+          </select>
+        </div>
+        <button type="button" id="ajouter">ajouter</button>
+      </form>
+    </section>
+    <section>
+      <div class="tbl">
+        <table id="table">
+          <tr>
+            <th>Tache</th>
+            <th>Description</th>
+            <th>Date</th>
+            <th>Etat</th>
+          </tr>
+
+          <tbody id="tBody"></tbody>
+        </table>
+      </div>
+    </section>
+    <script src="script.js"></script>
+  </body>
+</html>
